@@ -16,4 +16,6 @@ elgg_register_event_handler('init', 'system', 'galliElggEmbed_init');
 function galliElggEmbed_init() {
 	elgg_extend_view('js/elgg', 'galliElggEmbed/js');
 	elgg_extend_view('page/elements/sidebar', 'galliElggEmbed/share', 1000);
+	
+	elgg_register_viewtype_fallback("embed");
 }
