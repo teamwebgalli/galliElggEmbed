@@ -16,42 +16,18 @@ elgg.galliElggEmbed.init = function() {
 			
 			if (page_url.search("view=embed") == -1) {
 				// embed view not in url, so add
-				if (page_url.indexOf("?") == -1) {
-					page_url = page_url + "?view=embed";
-				} else {
-					page_url = page_url + "&view=embed";
-				}
+				page_url = elgg.galliElggEmbed.addQueryStringParameter(page_url, 'view', 'embed');
 			}
 		} else {
 			
 			if (page_url.search("view=embed") == -1) {
 				// embed view not in url, so add
-				if (page_url.indexOf("?") == -1) {
-					var embed_url = page_url + "?view=embed";
-				} else {
-					var embed_url = page_url + "&view=embed";
-				}
+				page_url = elgg.galliElggEmbed.addQueryStringParameter(page_url, 'view', 'embed');
 			}
 		}
 		
 		embed_code = embed_code.replace(page_url, embed_url);
 		$("#embediFrame").val(embed_code);
-	});
-	
-	var site_url = elgg.get_site_url();
-	
-	var selector = 'a[href^="' + site_url.replace("https://", "http://") + '"]:not([href*="view=embed"]),'
-					+ 'a[href^="' + site_url.replace("http://", "https://") + '"]:not([href*="view=embed"])';
-	
-	$embed_links = $(selector);
-	
-	$embed_links.live("click", function() {
-		console.log($(this).attr('href'));
-		
-		var href = $(this).attr('href');
-		href = elgg.galliElggEmbed.addQueryStringParameter(href, 'view', 'embed');
-		
-		$(this).attr('href', href);
 	});
 };
 

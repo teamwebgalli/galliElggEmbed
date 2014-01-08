@@ -23,6 +23,9 @@ if (elgg_get_context() == 'admin') {
 	return true;
 }
 
+// load special embed JS
+elgg_load_js("galliElggEmbed");
+
 // render content before head so that JavaScript and CSS can be loaded. See #4032
 $messages = elgg_view('page/elements/messages', array('object' => $vars['sysmessages']));
 $body = elgg_view('page/elements/body', $vars);
