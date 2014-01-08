@@ -12,7 +12,7 @@ elgg.galliElggEmbed.init = function() {
 		
 		if ($(this).is(":checked")) {
 			var embed_url = page_url.replace("?view=embed", "");
-			var embed_url = page_url.replace("&view=embed", "");
+			embed_url = page_url.replace("&view=embed", "");
 			
 			if (page_url.search("view=embed") == -1) {
 				// embed view not in url, so add
@@ -22,7 +22,7 @@ elgg.galliElggEmbed.init = function() {
 			
 			if (page_url.search("view=embed") == -1) {
 				// embed view not in url, so add
-				page_url = elgg.galliElggEmbed.addQueryStringParameter(page_url, 'view', 'embed');
+				var embed_url = elgg.galliElggEmbed.addQueryStringParameter(page_url, 'view', 'embed');
 			}
 		}
 		
