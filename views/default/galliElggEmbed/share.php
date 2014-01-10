@@ -11,7 +11,7 @@
  */
 $url = current_page_url();
 
-$iframe = "<iframe src='$url' style=' border-width:0 ' width='600'  height='600' frameborder='0' scrolling='no'></iframe>";
+$iframe = "<iframe src='$url' style=' border-width:0 ' width='600'  height='600' frameborder='0' scrolling='auto'></iframe>";
 
 $body = elgg_echo('galliElggEmbed:info');
 $body .= elgg_view('input/text', array( 'value' => $iframe, 'id' => 'embediFrame'));
