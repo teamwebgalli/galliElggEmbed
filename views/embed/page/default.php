@@ -24,7 +24,7 @@ if (elgg_get_context() == 'admin') {
 }
 
 // load special embed JS
-elgg_load_js("galliElggEmbed");
+elgg_require_js("galliElggEmbed");
 
 // render content before head so that JavaScript and CSS can be loaded. See #4032
 $messages = elgg_view('page/elements/messages', array('object' => $vars['sysmessages']));
@@ -44,7 +44,7 @@ $lang = get_current_language();
 			.elgg-page-default {
 				min-width: inherit;
 			}
-			
+
 			.elgg-page-default .elgg-page-body > .elgg-inner,
 			.elgg-page-default .elgg-page-body {
 				width: auto;
@@ -56,7 +56,7 @@ $lang = get_current_language();
 			<div class="elgg-page-messages">
 				<?php echo $messages; ?>
 			</div>
-			
+
 			<div class="elgg-page-body">
 				<div class="elgg-inner">
 					<?php echo $body; ?>

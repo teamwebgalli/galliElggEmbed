@@ -9,11 +9,9 @@
  *	Licence : GPLV2
  *	Copyright : Team Webgalli 2013-2015
  */
- 
-$english = array(
+
+return array(
 	'galliElggEmbed:embedthis' => "Embed this page",
 	'galliElggEmbed:info' => "To embed this page on your website / blog, copy the following code and past it in your website.",
 	'galliElggEmbed:info:full_layout' => "Show embedded page in full layout",
 );
-				
-add_translation("en", $english);
